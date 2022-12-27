@@ -17,6 +17,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Hello.NoActionBar">
+            <!-- 첫화면(Launcher)은 MainActivity 이다. -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

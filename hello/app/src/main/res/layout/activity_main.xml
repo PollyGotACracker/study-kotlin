@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- App bar: 메뉴 이름이 나타나는 상단 영역-->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,13 +16,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#5C6CC5"
             app:popupTheme="@style/Theme.Hello.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- include: content_main 내용 포함 -->
     <include layout="@layout/content_main" />
 
+    <!-- floating 아이콘 -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
