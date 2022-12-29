@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+    constraintLayout 에 배치하기
+    width 와 height 를 0dp 로 설정하고
+    부모 layout 에 대하여 4방향(top, bottom, left, right) 으로
+    고무줄처럼 당겨서 부모 layout 에 가득 차는 box 가 만들어진다.
+    -->
+
+    <!-- cf) Android RecyclerView : list 형태의 위젯으로 재사용, 애니메이션 핸들링 등 가능 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/word_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!-- cf) drawable 폴더 우클릭 > new > Vector Asset -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/phone_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="22dp"
+        android:background="#083BD5"
+        android:src="@drawable/ic_baseline_contact_phone_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="22dp"
+        android:background="#083BD5"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

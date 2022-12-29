@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <!-- 레이아웃 에디터를 사용하게 되면 절대값으로 설정되므로 권장하지 않음 -->
-    <!-- match_parent: 부모요소 크기만큼, wrap_content: viewport 크기만큼  -->
+    <!-- cf) match_parent: 부모 요소에 맞춤, wrap_content: 글자 등 내부 요소 크기에 맞춤  -->
     <!--
      ConstraintLayout
      가로 세로 방향으로 내부의 view(component) 들을 배치하는 Layout
@@ -19,6 +19,11 @@
        상하로 '당겨서' 세로 중앙 배치
      -->
     <!-- https://m2.material.io/design/layout/understanding-layout.html#layout-anatomy -->
+    <!--
+    textfield :
+    TextInputLayout
+    TextInputEditText
+    -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
