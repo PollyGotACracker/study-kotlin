@@ -13,7 +13,7 @@
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- hint : placeholder 와 유사 -->
+        <!-- EditText, hint : 각각 input, placeholder 와 유사 -->
         <EditText
             android:id="@+id/txt_phone_number"
             android:layout_width="match_parent"

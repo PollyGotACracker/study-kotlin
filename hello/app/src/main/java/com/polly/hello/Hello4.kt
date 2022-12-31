@@ -14,6 +14,7 @@ fun main() {
     } else {
         max2 = num2
     };
+
     // max2 = num1 > num2 ? num1 : num2
     // Kotlin 의 3항 연산자
     max2 = if(num1 > num2) num1 else num2;

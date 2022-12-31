@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         
         // activity_main.xml 에 만들어진 TextView 와 Button (tag)을 코드에서 사용하기
         // layout.xml 에 설정된 도구들은 모두 view 로 칭한다.
-        // 일부에서는 컴포넌트라고 하기도 한다.
+        // 일부에서는 컴포넌트, 위젯이라고 하기도 한다.
         // 이 뷰를 코드에서 사용할 때 View Class Type 이라고 한다.
         // Type(형) : 변수를 선언하는 일종의 키워드처럼 작동되는 것
         // TextView type 의 변수를 선언하고
@@ -97,6 +98,24 @@ class MainActivity : AppCompatActivity() {
                     Snackbar.LENGTH_LONG)  // 얼마동안
                 .show()  // 생성된 Snackbar 를 실행하기
         }  // end btnClick1 Click event
+        /**
+         * cf)
+         * Dialog
+         * 간단한 정보를 보여주고 사용자의 선택 또는 입력을 요구하는 대화상자
+         * 다른 행위를 하지 못하게 막기 때문에 confirm/prompt 팝업과 유사
+         *
+         * Toast
+         * 작은 팝업 형태로 사용자의 동작에 대한 단순 피드백 전달
+         * 시간이 지나면 자동으로 사라지나, 사용자가 직접 닫을 수 없음
+         * 사용자와 상호작용 할 수 없음
+         * activity 와 연결
+         *
+         * Snackbar
+         * 화면 하단에서 사용자의 동작에 대한 단순 피드백 전달
+         * 시간이 지나면 자동으로 사라지며, 사용자가 직접 닫을 수 있음
+         * 버튼을 통한 간단한 상호작용 가능(닫기, 취소 등)
+         * view(it) 와 연결
+         */
 
         val btnClick2 = findViewById<Button>(R.id.btn_click2)
         // 변수의 scope
@@ -118,16 +137,16 @@ class MainActivity : AppCompatActivity() {
         val btnClick3 = findViewById<Button>(R.id.btn_click3)
         /**
          * 안드로이드에서 여러 화면을 번갈아가며 정보를 보여주는 방법
-         * Activity 를 여러 개 만들어서 전환하며 보여주는 방법
-         * Fragment 를 여러 개 만들어서 전환하며 보여주는 방법
+         * 1. Activity 를 여러 개 만들어서 전환하며 보여주는 방법
+         * 2. Fragment 를 여러 개 만들어서 전환하며 보여주는 방법
          * 
-         * Activity 에 비해 Fragment 는 화면을 전환하는 데 리소스를 절약하는 방법
+         * Activity 에 비해 Fragment 는 화면을 전환하는 데 리소스 절약
          * 최근 안드로이드에서 많이 사용하고 권장하는 방법
-         * Activity 에 비해 Fragment 의 화면을 전환하는 것은
+         * 그러나 Activity 에 비해 Fragment 의 화면을 전환하는 것은
          *      초기 설정이 다소 까다롭다.
          *
          * 여기서는 Activity 전환을 사용하여 MainActivity 에서
-         * NewActivity 를 열고 위로가기(뒤로가기) 기능을 구현해보자
+         * NewActivity 를 열고 위로가기(뒤로가기) 기능을 구현한다.
          *
          * Activity 를 사용하여 화면을 전환할 때는
          * 새로운 Activity 를 intent 로 만들고 startActivity() 함수에 전달해주면
@@ -152,9 +171,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btnClick4 = findViewById<Button>(R.id.btn_click4)
-
-
-
+        btnClick4.setOnClickListener{
+            val number1 = findViewById<EditText>(R.id.number1).text.toString()
+            val number2 = findViewById<EditText>(R.id.number2).text.toString()
+            val addActivityIntent = Intent(
+                this@MainActivity,
+                AddActivity::class.java
+            ).apply{
+                putExtra("number1", number1.toInt())
+                putExtra("number2", number2.toInt())
+            }
+            startActivity(addActivityIntent)
+        }
         // 뒤로가기 버튼 생성 및 label 변경
         // manifests -> AndroidManifest.xml 파일에서
         //        <activity

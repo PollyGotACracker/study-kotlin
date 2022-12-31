@@ -39,11 +39,12 @@ class MainActivity : AppCompatActivity() {
         // 한번 Enter(줄바꿈)을 입력하고 나면
         // 키보드가 작동하지 않는 버그 발견
         /**
-         * input box 의 inputType = "text" 로 하면
+         * xml 파일에서 input box 의 inputType = "text" 로 하면
          * 키보드에 줄바꿈이 아닌 "완성" Enter 가 나타난다.
-         * 완성 Enter 가 눌렸을 때 발생하는 Event Handler
          *
-         * Lambda 방식으로 구현한 Event Handler
+         * setOnEditorActionListener :
+         * 키보드에서 완성 Enter 가 눌렸을 때 발생하는 Event Handler
+         * 아래 코드는 Lambda 함수 방식으로 구현
          */
         inputText.setOnEditorActionListener{view,keyCode,event->
                 // input box 에 입력된 문자열만 text 변수에 할당

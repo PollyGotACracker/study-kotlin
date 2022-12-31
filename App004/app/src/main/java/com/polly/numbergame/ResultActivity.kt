@@ -13,6 +13,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val rndNumber = intent.getIntExtra("rndNumber",0)
         var inputNumber = intent.getIntExtra("inputNumber",0)
 

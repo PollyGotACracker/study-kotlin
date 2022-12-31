@@ -16,9 +16,10 @@ class MainActivity: AppCompatActivity() {
      * 접근제한자
      *  변수나, 함수 등을 은닉하여 다른 곳에서 보거나
      *  값을 변경하는 것을 허용, 제한하는 키워드
-     *  public : 허용
-     *  private : 제한
-     *  protected : 상황에 따라
+     *  public : 제한 X  (기본값)
+     *  internal : 같은 클래스 또는 모듈 내에서만
+     *  protected : 같은 클래스 및 상속받은 클래스, 또는 같은 모듈 및 상속받은 모듈
+     *  private : 같은 클래스 내부에서만
      *
      * lateinit var : 변수의 초기화(값 할당)를 잠시 늦춤
      * Kotlin 은 변수를 선언함과 동시에 초기화(값 할당)을 하는 것이 원칙이다.
@@ -27,7 +28,14 @@ class MainActivity: AppCompatActivity() {
      * 프로젝트 gradle 설정에 viewBinding 항목을 true 로 enabled 해주면
      * layout / *.xml 파일들이 자동으로 viewBinding Class 로 생성된다.
      * ViewBinding Class 는 xml 파일에 설정된 모든 view 를 요소로 포함하고 있다.
+     * * grable binding 설정 :
+     *      Gradle Scripts > build.gradle(Module...)
+     *          viewBinding {
+     *          enabled true
+     *          }
      */
+    
+    // top-level 에서 접근제한자 정의
     private lateinit var binding: ActivityMainBinding
     private var rndNumber = 0;
 
@@ -43,6 +51,7 @@ class MainActivity: AppCompatActivity() {
         rndNumber = (1 .. 20).random()
 
         // setContentView(R.layout.activity_main)
+        // R.layout... 또는 R.id... 를 쓰지 않고 binding 으로 조작
         // binding 으로 연결된 layout / *.xml 파일을 화면에 그려라
         setContentView(binding.root)
 
@@ -54,7 +63,7 @@ class MainActivity: AppCompatActivity() {
                     Snackbar.LENGTH_LONG)
                 .show()
         }
-
+        // EditText 입력 후 enter event
         binding.txtNumber.setOnEditorActionListener{view, keyCode, event ->
             // input 에 입력된 문자열 추출
             val number = binding.txtNumber.text.toString()
@@ -65,10 +74,12 @@ class MainActivity: AppCompatActivity() {
                     message = "입력한 숫자 $number 는 1부터 20 범위의 값이 아닙니다."
                     ret = false;
                 }
+            // 숫자가 아닌 값을 숫자형으로 변환하려 할 때 발생하는 exception
             } catch(e: NumberFormatException) {
                 message = "입력한 값이 비어있거나, 숫자가 아닙니다."
                 ret = false;
             }
+            // ref 가 false 일 경우 실행
             if (!ret) {
                 Snackbar
                     .make(

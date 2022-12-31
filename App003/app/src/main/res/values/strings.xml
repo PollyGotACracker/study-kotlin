@@ -4,4 +4,5 @@
     <string name="click">Click</string>
     <string name="open_activity_hint">Open Next</string>
     <string name="new_activity_label">Second Play</string>
+    <string name="calculate">Calculate</string>
 </resources>

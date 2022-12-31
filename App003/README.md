@@ -4,7 +4,7 @@
 
 ## 추가사항
 * AddActivity 를 프로젝트에 추가
-* activity_main.xml 에 EditText 2 를 생성하고
+* activity_main.xml 에 EditText 2개를 생성하고
 * Button 한 개를 추가한다.
 * 2개의 EditText 에 각각 숫자를 입력한 후 Button 을 클릭하면
 * EditText 에 입력된 숫자를 putExtra 하여 AddActivity 에 전달하고

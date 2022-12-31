@@ -17,16 +17,25 @@ class PhoneCall : AppCompatActivity() {
         val btn_phone = findViewById<Button>(R.id.btn_phone)
 
         btn_phone.setOnClickListener{
+            // txt_phone_number 에 입력된 값 추출 후 String 으로 변환
             val phoneNumber = txt_phone.text.toString()
-            // URI 가 아니라 Uri !!
+            // cf) URI 형태로 parsing. URI 가 아니라 Uri 임에 주의
+            // URI 는 리소스(Resource)에 접근할 수 있는 유일한(Uniform) 식별자(Identifier)이다.
+            // 가장 앞의 프로토콜(스키마)에 따라서, http:// 또는 https:// 로 시작하는 웹 주소뿐만 아니라,
+            // 전화, 지도, 이미지, 텍스트 등 리소스를 로드한다. 여기서는 전화 프로토콜 tel: 을 사용한다.
             val phoneURI = Uri.parse("tel:${phoneNumber}")
+            // cf) 암시적 인텐트
+            // 특정 액티비티의 시작을 요청할 때, 수행될 액션과 수신 액티비티에 의해 처리되는 데이터 타입을 지정하는 방식
+            // 특정 리소스의 URI 객체를 포함한 ACTION_... 액션 타입은
+            // 해당 액션이 가능한 액티비티를 찾아 실행시킬 것을 안드로이드 시스템에 요청한다.
             val intent = Intent(Intent.ACTION_DIAL, phoneURI)
             startActivity(intent)
         }
-
+        // ACTION_DIAL: 전화 앱을 열어 키패드에 전화번호 표시, 권한(permission) 필요 X
+        // ACTION_CALL: 전화 앱을 열고 바로 전화 걸기, 권한 필요
         btn_call.setOnClickListener{
             /**
-             * 안드로이드 전화걸기
+             * 안드로이드 전화 걸기
              * phone 기기에 기본적으로 내장된 전화걸기 서비스를 호출하여 전화 걸기
              * 호출하고자 하는 전화번호를 Uri 형태로 만들고,
              * Intent.ACTION_CALL intent 에게 전송하여 전화를 호출한다.
@@ -39,7 +48,7 @@ class PhoneCall : AppCompatActivity() {
              *
              * 여기에서는 권한 부여 확인 및 설정코드를 생략했다.
              * 이 경우 test 를 위하여
-             * 수동으로... 설정 > 앱 > 해당 어플 > 권한 > 전화 권한을 허용해준다.
+             * AVD 또는 연결한 기기에서 수동으로... 설정 > 앱 > 해당 어플 > 권한 > 전화 권한을 허용해준다.
              * 그리고 Manifest.xml 의 use-permission 항목에 CALL_PHONE 을 등록해야 한다.
              */
 

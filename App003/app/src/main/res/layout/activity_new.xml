@@ -18,8 +18,8 @@
         android:text="이름 : "
         />
 
-    <!-- cf) width 의 값을 0dp 로 하면 margin 을 제외하고 화면에 가득 차게 된다. -->
-    <!-- app:layout_constraintHorizontal_weight : 수평방향 요소들의 상대 크기 지정 -->
+    <!-- cf) width 의 값을 0dp 로 하면 margin 을 제외한 화면에 가득 차게 된다. -->
+    <!-- app:layout_constraintHorizontal_weight : 수평방향 요소들 간의 상대 크기 지정 -->
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="0dp"

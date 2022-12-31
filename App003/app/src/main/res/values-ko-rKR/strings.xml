@@ -5,4 +5,5 @@
     <string name="click">클릭해주세요</string>
     <string name="open_activity_hint">다른 화면 열기</string>
     <string name="new_activity_label">2번째 화면</string>
+    <string name="calculate">계산하기</string>
 </resources>

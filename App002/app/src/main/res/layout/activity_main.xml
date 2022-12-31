@@ -13,7 +13,7 @@
     고무줄처럼 당겨서 부모 layout 에 가득 차는 box 가 만들어진다.
     -->
 
-    <!-- cf) Android RecyclerView : list 형태의 위젯으로 재사용, 애니메이션 핸들링 등 가능 -->
+    <!-- cf) Android RecyclerView : list 형태의 widget 으로 재사용, 애니메이션 핸들링 등 가능 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/word_list"
         android:layout_width="0dp"

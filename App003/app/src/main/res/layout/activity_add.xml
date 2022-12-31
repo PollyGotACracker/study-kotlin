@@ -7,11 +7,36 @@
     tools:context=".AddActivity">
 
     <TextView
+        android:id="@+id/result_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         android:text="결과"
+        />
+    <TextView
+        android:id="@+id/result_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/result_title"
+        />
+    <TextView
+        android:id="@+id/result_subtract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/result_add"
+        />
+    <TextView
+        android:id="@+id/result_multiply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/result_subtract"
+        />
+    <TextView
+        android:id="@+id/result_divide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/result_multiply"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

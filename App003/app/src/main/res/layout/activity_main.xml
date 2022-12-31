@@ -8,8 +8,9 @@
 
     <!-- 글자 크기는 dp 보다 sp 를 권장 -->
     <!--
+    cf)
     layout_constraint: 레이아웃 제약조건
-    해당 요소의 ... 가 어느 요소의 ... 를 기준으로 맞춰지는지
+    해당 요소의 ... 가 어느 요소의 ... 를 기준으로 정렬되는가?
     Top/Bottom/Left/Right(Start/End)
     -->
     <TextView
@@ -27,9 +28,9 @@
 
     <!--
     cf)
-    text 의 값 우클릭 -> Show Context Actions -> Extract string resource
-    @string/... 을 ctrl + 우클릭 -> strings.xml -> 탭 오른쪽 메뉴의 open editor 클릭
-    탭 메뉴에서 왼쪽 지구본 버튼 클릭 -> Korean 검색 후 추가
+    text 의 값 우클릭 > Show Context Actions > Extract string resource
+    @string/... 을 ctrl + 우클릭 > strings.xml > 탭 오른쪽 메뉴의 open editor 클릭
+    탭 메뉴에서 왼쪽 지구본 버튼 클릭 > Korean 검색 후 추가
     -->
     <Button
         android:id="@+id/btn_click1"
@@ -49,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="@string/click"
         android:textSize="20sp"
-        android:backgroundTint="#00FF00"
+        android:backgroundTint="#2196F3"
         android:textColor="@color/black"
         android:layout_margin="20dp"
         android:padding="12dp"
@@ -75,14 +76,41 @@
         android:id="@+id/btn_click4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/open_activity_hint"
+        android:text="@string/calculate"
         android:textSize="20sp"
-        android:backgroundTint="#F53123"
+        android:backgroundTint="#FFC107"
         android:textColor="@color/black"
         android:layout_margin="20dp"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_click3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_click3"
+        />
+
+    <EditText
+        android:id="@+id/number1"
+        android:inputType="numberDecimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/number2"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_click4"
+        android:hint="숫자1"
+        />
+
+    <EditText
+        android:id="@+id/number2"
+        android:inputType="numberDecimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/number1"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_click4"
+        android:hint="숫자2"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
