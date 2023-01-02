@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Number Game</string>
+    <string name="game_restart">Game Restart</string>
+    <string name="input_number">Please Enter Number</string>
+    <string name="input_number_range">%1$d : Please Enter Number ( 1 ~ %2$d )</string>
+    <string name="input_hint">Please Enter The Number %1$d ~ %2$d</string>
+    <string name="number_nan">$1$d : Please Enter The Correct Number(%2$d ~ %3$d)</string>
+    <string name="number_fail">Please Enter The Number</string>
+    <string name="good_job">Good Job : %1$d</string>
+    <string name="number_greater_than">%1$d : Greater Than Number</string>
+    <string name="number_less_than">%1$d : Less Than Number</string>
+    <string name="number_not">Doesn\'t Number</string>
+    <string name="restart">Restart Game</string>
+    <string name="number_ok">Check Number</string>
+</resources>

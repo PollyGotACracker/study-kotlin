@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">내 단어장</string>
+    <string name="input_add_hint">단어를 입력하세요</string>
+    <string name="title_bar_text">내 단어장</string>
+</resources>

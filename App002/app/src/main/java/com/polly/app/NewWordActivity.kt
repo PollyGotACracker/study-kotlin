@@ -32,7 +32,7 @@ class NewWordActivity : AppCompatActivity() {
          *      ex)
          *      val extras = intent.extras ?: return
          *      val myString = extras.getString("myString")
-         *      int myInt = extras.get:Int("myInt")
+         *      int myInt = extras.getInt("myInt")
          *
          * 2. intent.getStringExtra("name")/getIntExtra("name",defaultValue)
          */
