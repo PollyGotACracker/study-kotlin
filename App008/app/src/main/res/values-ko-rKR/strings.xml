@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">어플 008</string>
+    <string name="input_add_hint">영문 단어를 입력하세요</string>
+    <string name="btn_add_text">추가</string>
+    <string name="txt_title_text">입력한 단어 확인</string>
+    <string name="btn_back_text">돌아가기</string>
+</resources>

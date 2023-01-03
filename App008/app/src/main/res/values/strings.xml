@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App 008</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="input_add_hint">Type English Word</string>
+    <string name="btn_add_text">Add</string>
+    <string name="txt_title_text">Check Input Word</string>
+    <string name="btn_back_text">Back</string>
+</resources>
