@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Scramble Word</string>
+    <string name="guess_word">"Guess The Word "</string>
+    <string name="txt_btn_skip">SKIP</string>
+    <string name="txt_btn_submit">SUBMIT</string>
+    <string name="txt_word">Korea</string>
+    <string name="type_word">Type Here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

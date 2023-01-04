@@ -5,7 +5,7 @@
     <string name="input_number">숫자를 입력해주세요.</string>
     <string name="input_number_range">입력한 숫자 %1$d 는 1 부터 %2$d 범위가 아닙니다.</string>
     <string name="input_hint">%1$d 부터 %2$d 범위의 정수를 입력하세요.</string>
-    <string name="number_nan">입력한 숫자 $1$d 는 %2$d부터 %3$d 범위의 값이 아닙니다.</string>
+    <string name="number_nan">입력한 숫자 %1$d 는 %2$d부터 %3$d 범위의 값이 아닙니다.</string>
     <string name="number_fail">입력한 값이 비어있거나, 숫자가 아닙니다.</string>
     <string name="good_job">참 잘했어요 : %1$d</string>
     <string name="number_greater_than">%1$d는 정답보다 큽니다.</string>

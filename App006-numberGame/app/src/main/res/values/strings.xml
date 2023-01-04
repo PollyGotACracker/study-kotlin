@@ -4,7 +4,7 @@
     <string name="input_number">Please Enter Number</string>
     <string name="input_number_range">%1$d : Please Enter Number ( 1 ~ %2$d )</string>
     <string name="input_hint">Please Enter The Number %1$d ~ %2$d</string>
-    <string name="number_nan">$1$d : Please Enter The Correct Number(%2$d ~ %3$d)</string>
+    <string name="number_nan">%1$d : Please Enter The Correct Number(%2$d ~ %3$d)</string>
     <string name="number_fail">Please Enter The Number</string>
     <string name="good_job">Good Job : %1$d</string>
     <string name="number_greater_than">%1$d : Greater Than Number</string>
