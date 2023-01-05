@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Scramble Word</string>
+    <string name="guess_word">Guess The Word</string>
+    <string name="txt_btn_skip">SKIP</string>
+    <string name="txt_btn_submit">SUBMIT</string>
+    <string name="txt_word">Korea</string>
+    <string name="type_word">Type Here</string>
+    <string name="game_score">GAME SCORE : %1$s</string>
+    <string name="game_count">GAME COUNT : %1$s</string>
+    <string name="correct">CORRECT</string>
+    <string name="incorrect">NOT CORRECT : %1$s</string>
+    <string name="wow">CONGRATULATIONS!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

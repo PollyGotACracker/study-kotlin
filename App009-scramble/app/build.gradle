@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+// App 프로젝트를 만드는 방법에 대한 설정
+android {
+    // base-package
+    namespace 'com.polly.game'
+    compileSdk 33
+
+    defaultConfig {
+        // App 을 배포할 때 사용하는 Identifier
+        applicationId "com.polly.game"
+        minSdk 25
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    // Android Studio 4.0 이상에서
+    buildFeatures {
+        viewBinding true
+        // viewModel 과 view(UI) 화면을 연동하기
+        dataBinding true
+    }
+    // Android Studio 3.x ~ 4.0 까지 사용
+//    buildFeatures {
+//        viewBinding {
+//          enabled = true
+//        }
+//        dataBinding {
+//          enabled = true
+//        }
+//    }
+}
+
+dependencies {
+    // Kotlin 핵심
+    implementation 'androidx.core:core-ktx:1.9.0'
+    
+    // Activity 를 만들기 위한 대부분의 기능이 구현된 library
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    
+    // Material Theme 를 사용하기 위한 library
+    implementation 'com.google.android.material:material:1.7.0'
+
+    // Constraint Layout 을 사용하기 위한 library
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Fragment 에서 viewModel 데이터를 사용하기 위한 lib
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+
+    // databinding 효과를 사용하기 위한 lib
+    implementation 'androidx.databinding:databinding-runtime:7.3.1'
+
+    // 단위테스트 를 수행하는 도구
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}

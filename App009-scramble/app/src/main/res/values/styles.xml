@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    name="widget.TextInputLayout.outLineBox"
+    parent 속성으로 기존 Android Material Components 상속
+    -->
+    <style name="polly.TextInputLayout.outLineBox"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+        <!-- values > colors.xml 에서 지정한 색상 -->
+        <item name="boxStrokeColor">@color/red_700</item>
+        <item name="errorIconTint">@color/red_700</item>
+        <item name="errorTextColor">@color/red_700</item>
+        <item name="errorIconDrawable">@drawable/ic_twotone_error_24</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+    </style>
+</resources>
