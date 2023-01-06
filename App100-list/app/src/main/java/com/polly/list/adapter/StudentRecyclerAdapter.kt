@@ -13,7 +13,7 @@ import com.polly.list.models.StudentDto
  * 기본 코드만으로 구현이 어려운 부분이 많다.
  * 안드로이드에서는 데이터를 RecyclerView 에 표현할 때
  * 여러가지 잡다한 설정을 해야 한다.
- * 이러한 설정을 하는 별도의 모듈을 생성해야 한다.
+ * 이때 이러한 설정을 하는 별도의 모듈을 생성한다.
  *
  * 설정을 별도로 만들고 연결하는 도구로 사용하는 클래스를
  * Helper class 라고 한다. Adapter 클래스도 Helper 클래스 중의 하나이다.
@@ -27,7 +27,6 @@ import com.polly.list.models.StudentDto
  *
  * studentList:MutableList<StudentDto>
  * 학생정보들이 저장된 배열을 받아서 사용하겠다.
- *
  */
 
 class StudentRecyclerAdapter(private val studentList: MutableList<StudentDto>) :
@@ -45,8 +44,12 @@ class StudentRecyclerAdapter(private val studentList: MutableList<StudentDto>) :
 
     // data binding 함수
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
+        // List 에서 1개의 데이터를 추출하여(position 은 데이터의 index)
         val item = studentList[position]
         val stHolder = holder as StudentViewHolder
+
+        // 개별 데이터를 view 의 text 속성에 setting
         stHolder.txtStNum.text = item.num.toString()
         stHolder.txtStName.text = item.name.toString()
         stHolder.txtStAddr.text = item.address.toString()
@@ -67,6 +70,8 @@ class StudentRecyclerAdapter(private val studentList: MutableList<StudentDto>) :
      */
     inner class StudentViewHolder(binding: StudentListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        // xml 파일의 view 요소들을 각각 개별 변수에 할당
         val txtStNum: TextView = binding.stNum
         val txtStName: TextView = binding.stName
         val txtStAddr: TextView = binding.stAddr

@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.polly.student'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.polly.student"
+        minSdk 25
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    /**
+     * viewModel 을 사용하기 위한 lib
+     */
+    def lifecycle_version = "2.5.1"
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    
+    // fragment 에서 viewModel 을 사용하기 위한 lib
+    // viewModels(), activityViewModels 를 사용하기 위하여 반드시 -ktx 버전 사용(Kotlin)
+    // https://mvnrepository.com/artifact/androidx.fragment/fragment
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+
+    // view 와 viewModel 을 연결하여 사용하기 위한 lib
+    // https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
+    implementation 'androidx.databinding:databinding-runtime:7.3.1'
+    
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
